@@ -37,8 +37,7 @@ class ChoosingOptionsLogic extends Component {
                 CharacterEyeColor: matchingChar.eye_color
             })
             const spinningElement = document.querySelector(".lightsaber-picture")
-            TweenLite.to(spinningElement, 0.7, {rotation:360, transformOrigin: "center"});
-            console.log("hi this is a test")
+            TweenLite.fromTo(spinningElement, 0.7,{rotation: 0},{rotation: 360, transformOrigin: "center"});
         }   
     }
 
