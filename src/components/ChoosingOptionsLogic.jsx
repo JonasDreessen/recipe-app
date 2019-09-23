@@ -1,5 +1,6 @@
 import React, {Component} from "react"
 import ChoosingOption from "./ChoosingOptions"
+import { TweenLite } from "gsap"
 
 class ChoosingOptionsLogic extends Component {
 
@@ -8,9 +9,9 @@ class ChoosingOptionsLogic extends Component {
         this.state = {
             data: [],
             CharacterIsSelected: false,
-            CharacterName: "", 
+            charactername: "", 
             CharacterHeight: "", 
-            CharacterMass: "", 
+            charactermass: "", 
             CharacterHairColor: "", 
             CharacterSkinColor: "",
             CharacterBirthYear: "",
@@ -27,14 +28,17 @@ class ChoosingOptionsLogic extends Component {
         if (matchingChar) {
             this.setState({
                 CharacterIsSelected: true,
-                CharacterName: event.target.value,
+                charactername: event.target.value,
                 CharacterHeight: matchingChar.height,
-                CharacterMass: matchingChar.mass,
+                charactermass: matchingChar.mass,
                 CharacterHairColor: matchingChar.hair_color,
                 CharacterSkinColor: matchingChar.skin_color,
                 CharacterBirthYear: matchingChar.birth_year,
                 CharacterEyeColor: matchingChar.eye_color
             })
+            const spinningElement = document.querySelector(".lightsaber-picture")
+            TweenLite.to(spinningElement, 0.7, {rotation:360, transformOrigin: "center"});
+            console.log("hi this is a test")
         }   
     }
 
@@ -46,9 +50,9 @@ class ChoosingOptionsLogic extends Component {
                     optionsData={this.props.CharacterData.results} 
                     isLoading={this.props.isLoading}
                     CharacterIsSelected={this.state.CharacterIsSelected}
-                    CharacterName={this.state.CharacterName}
+                    charactername={this.state.charactername}
                     CharacterHeight={this.state.CharacterHeight}
-                    CharacterMass={this.state.CharacterMass}
+                    charactermass={this.state.charactermass}
                     CharacterHairColor={this.state.CharacterHairColor}
                     CharacterSkinColor={this.state.CharacterSkinColor}
                     CharacterBirthYear={this.state.CharacterBirthYear}
