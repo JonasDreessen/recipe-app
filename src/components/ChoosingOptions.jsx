@@ -1,4 +1,5 @@
 import React from "react"
+import LightSaberPicture from "../images/lightsaber.png"
 
 function ChoosingOption(props) {  
     
@@ -7,6 +8,7 @@ function ChoosingOption(props) {
                     <form action="">
                         <select name="CharacterNames" onChange={props.onClick}>
                         <option>--- Choose Your Character ---</option>
+                        
                         {!props.isLoading && props.optionsData.map(everyData => 
                                 <option 
                                 CharacterName={everyData.name} 
@@ -17,6 +19,7 @@ function ChoosingOption(props) {
                                 </option>
                                 )}
                         </select>
+                        <img src={LightSaberPicture} alt="cannot load" className="lightsaber-picture"/>
                     </form>
                         <div className="options-display">
                             <h1>{props.isLoading ? null : props.CharacterName }</h1>
