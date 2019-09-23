@@ -10,4 +10,8 @@
       justify-content: space-around;
   list-style: none;
 }
+
+.options {
+  border: 1px solid black;
+}
 /*# sourceMappingURL=style.css.map */
