@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import ChoosingOption from "./ChoosingOptions"
 import { TweenLite } from "gsap"
+import HomeWorld from "./HomeWorld"
 
 class ChoosingOptionsLogic extends Component {
 
@@ -15,16 +16,17 @@ class ChoosingOptionsLogic extends Component {
             CharacterHairColor: "", 
             CharacterSkinColor: "",
             CharacterBirthYear: "",
-            CharacterEyeColor: ""
+            CharacterEyeColor: "",
+            CharacterPlanet:[],
         }
         this.handleClick = this.handleClick.bind(this)
     }
-
+    
     handleClick (event) {
         event.preventDefault();
         const CharacterDataArray = this.props.CharacterData.results
         const matchingChar = CharacterDataArray.find(character => character.name === event.target.value)
-
+        
         if (matchingChar) {
             this.setState({
                 CharacterIsSelected: true,
@@ -34,13 +36,22 @@ class ChoosingOptionsLogic extends Component {
                 CharacterHairColor: matchingChar.hair_color,
                 CharacterSkinColor: matchingChar.skin_color,
                 CharacterBirthYear: matchingChar.birth_year,
-                CharacterEyeColor: matchingChar.eye_color
+                CharacterEyeColor: matchingChar.eye_color,
+                CharacterPlanet: matchingChar.homeworld
             })
             const spinningElement = document.querySelector(".lightsaber-picture")
-            TweenLite.fromTo(spinningElement, 0.7,{rotation: 0},{rotation: 360, transformOrigin: "center"});
-        }   
-    }
-
+            TweenLite.fromTo(spinningElement, 0.7,{rotation: 0},{rotation: 360, transformOrigin: "center"}, {rotation: 0});
+            
+            fetch(matchingChar.homeworld)
+            .then(response => response.json())
+            .then(response => 
+                this.setState({
+                    CharacterPlanet: response
+                }))
+        }
+        console.log(this.state.CharacterPlanet)
+    }   
+    
     render(){
         return (
             <div>
@@ -56,6 +67,10 @@ class ChoosingOptionsLogic extends Component {
                     CharacterSkinColor={this.state.CharacterSkinColor}
                     CharacterBirthYear={this.state.CharacterBirthYear}
                     CharacterEyeColor={this.state.CharacterEyeColor}
+                />
+                <HomeWorld
+                    Planet={this.state.CharacterPlanet}
+                    Selected={this.state.CharacterIsSelected}
                 />
                 
             </div>

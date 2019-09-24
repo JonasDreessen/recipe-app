@@ -6,47 +6,37 @@ body{
     font-family: 'Roboto', sans-serif;
 }
 .navbar{
-    border: black solid 1px;
-    ul{
-        display: flex;
-        justify-content: space-around;
-        list-style: none;
-        
-    }
+    text-align: center;
+    letter-spacing: 1px;
+    
 }
 
 .options{
     padding: 20px;
 }
+.options-display{
+    h1{
+        color: black;
+        letter-spacing: 2px;
+    }
+    p{
+        color: black;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+}
 
 .lightsaber-picture{
     height: 100px;
-    
 }
-// // lightsaber animation 
-// .lightsaber-picture {
-// 	-webkit-animation: lightsaber-picture 1s ease-out both;
-// 	        animation: lightsaber-picture 1s ease-out both;
-// }
-// @-webkit-keyframes lightsaber-picture {
-//     0% {
-//       -webkit-transform: rotate(0);
-//               transform: rotate(0);
-//     }
-//     100% {
-//       -webkit-transform: rotate(360deg);
-//               transform: rotate(360deg);
-//     }
-//   }
-//   @keyframes lightsaber-picture {
-//     0% {
-//       -webkit-transform: rotate(0);
-//               transform: rotate(0);
-//     }
-//     100% {
-//       -webkit-transform: rotate(360deg);
-//               transform: rotate(360deg);
-//     }
-//   }
 
-// // end lightsaber animation
+.planet-display{
+    p{
+        color: black;
+        font-size: 16px;
+        letter-spacing: 1px;
+        font-weight: bold;
+    }
+}
+

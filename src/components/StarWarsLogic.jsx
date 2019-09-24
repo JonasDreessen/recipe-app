@@ -1,6 +1,7 @@
 import React , {Component} from "react"
-import StarWars from "./StarWars"
+import Loading from "./StarWars"
 import ChoosingOptionsLogic from "./ChoosingOptionsLogic"
+
 
 
 
@@ -25,14 +26,14 @@ class StarWarsLogic extends Component {
                     data: response
                 })
                 )
-         
     }
 
     render(){
         return(
             <div>
-                <StarWars isLoading={this.state.loading} data={this.state.data} />
+                <Loading isLoading={this.state.loading} data={this.state.data} />
                 <ChoosingOptionsLogic CharacterData={this.state.data} isLoading={this.state.loading} />
+                
             </div>
         )
     }

@@ -1,7 +1,7 @@
 import React from 'react';
-import Header from './Header'
 // import Recipes from "./Recipes"
 import StarWarsLogic from './StarWarsLogic';
+import Header from "./Header"
 //import ChoosingOptions from "./ChoosingOptions"
 
 
