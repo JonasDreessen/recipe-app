@@ -33,7 +33,6 @@ class StarWarsLogic extends Component {
             <div>
                 <Loading isLoading={this.state.loading} data={this.state.data} />
                 <ChoosingOptionsLogic CharacterData={this.state.data} isLoading={this.state.loading} />
-                
             </div>
         )
     }

@@ -1,25 +1,21 @@
-import React, {useState, useEffect} from "react"
+import React from "react"
 
 
 const HomeWorld = (props) => {
-    const [planetData, setPlanetData] = useState([]);
 
-    useEffect(() => {
-        if(props.Selected === true){
-            if(props.Planet !== planetData){
-            setPlanetData(props.Planet)
-            }
-        }
-    },[props.Planet, planetData, props.Selected])
+    if(props.Selected){
+        return(
 
-    return(
-        <div className="planet-display">
-            <p>Planet: {planetData.name}</p>
-            <p>Population: {planetData.population}</p>
-            <p>Terrain: {planetData.terrain}</p>
-            <p>Climate: {planetData.climate}</p>
-        </div>
-    )
+            <div className="planet-display"> 
+                <p>Planet: {props.Planet.name}</p>
+                <p>Population: {props.Planet.population}</p>
+                <p>Terrain: {props.Planet.terrain}</p>
+                <p>Climate: {props.Planet.climate}</p>
+            </div>
+        )
+        
+    }
+    return HomeWorld
 }
 
 export default HomeWorld

@@ -5,18 +5,30 @@ body {
   font-family: 'Roboto', sans-serif;
 }
 
+.general-container {
+  text-align: center;
+}
+
 .navbar {
   text-align: center;
   letter-spacing: 1px;
+  margin-bottom: 100px;
 }
 
 .options {
   padding: 20px;
 }
 
-.options-display h1 {
+.options-display {
+  margin: 30px auto;
+  width: 300px;
+  text-align: left;
+}
+
+.options-display h2 {
   color: black;
   letter-spacing: 2px;
+  text-shadow: 2px 2px 3px #351E1E;
 }
 
 .options-display p {
@@ -28,6 +40,12 @@ body {
 
 .lightsaber-picture {
   height: 100px;
+}
+
+.planet-display {
+  width: 300px;
+  margin: 0 auto;
+  text-align: left;
 }
 
 .planet-display p {

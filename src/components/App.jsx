@@ -4,11 +4,9 @@ import StarWarsLogic from './StarWarsLogic';
 import Header from "./Header"
 //import ChoosingOptions from "./ChoosingOptions"
 
-
-
 function App() {
   return (
-    <div>
+    <div className="general-container">
       <Header />
       <StarWarsLogic />
     </div>

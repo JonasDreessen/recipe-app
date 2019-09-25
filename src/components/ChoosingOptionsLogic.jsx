@@ -49,30 +49,30 @@ class ChoosingOptionsLogic extends Component {
                     CharacterPlanet: response
                 }))
         }
-        console.log(this.state.CharacterPlanet)
     }   
     
     render(){
         return (
-            <div>
-                <ChoosingOption 
-                    onClick={this.handleClick} 
-                    optionsData={this.props.CharacterData.results} 
-                    isLoading={this.props.isLoading}
-                    CharacterIsSelected={this.state.CharacterIsSelected}
-                    charactername={this.state.charactername}
-                    CharacterHeight={this.state.CharacterHeight}
-                    charactermass={this.state.charactermass}
-                    CharacterHairColor={this.state.CharacterHairColor}
-                    CharacterSkinColor={this.state.CharacterSkinColor}
-                    CharacterBirthYear={this.state.CharacterBirthYear}
-                    CharacterEyeColor={this.state.CharacterEyeColor}
-                />
-                <HomeWorld
-                    Planet={this.state.CharacterPlanet}
-                    Selected={this.state.CharacterIsSelected}
-                />
-                
+        <div className="choosing-options-container">
+                <div className="choosing-option">
+                    <ChoosingOption 
+                        onClick={this.handleClick} 
+                        optionsData={this.props.CharacterData.results} 
+                        isLoading={this.props.isLoading}
+                        CharacterIsSelected={this.state.CharacterIsSelected}
+                        charactername={this.state.charactername}
+                        CharacterHeight={this.state.CharacterHeight}
+                        charactermass={this.state.charactermass}
+                        CharacterHairColor={this.state.CharacterHairColor}
+                        CharacterSkinColor={this.state.CharacterSkinColor}
+                        CharacterBirthYear={this.state.CharacterBirthYear}
+                        CharacterEyeColor={this.state.CharacterEyeColor}
+                    />
+                    <HomeWorld
+                        Planet={this.state.CharacterPlanet}
+                        Selected={this.state.CharacterIsSelected}
+                    />
+                </div>
             </div>
         )
     }
